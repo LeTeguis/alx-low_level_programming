@@ -1,0 +1,17 @@
+echo '#!/bin/bash' > 0x00-hello_world/1-compiler
+
+echo 'gcc -c $CFILE' >> 0x00-hello_world/1-compiler
+
+chmod u+x 0x00-hello_world/1-compiler
+
+git add .
+
+git commit -m "hello world"
+
+git push
+
+clear
+
+vi scripting
+
+./scripting
