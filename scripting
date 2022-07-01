@@ -1,8 +1,8 @@
-echo '#!/bin/bash' > 0x00-hello_world/3-name
+echo '#!/bin/bash' > 0x00-hello_world/100-intel
 
-echo 'gcc $CFILE -o cisfun' >> 0x00-hello_world/3-name
+echo 'gcc -S -masm=intel $CFILE' >> 0x00-hello_world/100-intel
 
-chmod u+x 0x00-hello_world/3-name
+chmod u+x 0x00-hello_world/100-intel
 
 git add .
 
