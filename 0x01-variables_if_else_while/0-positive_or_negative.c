@@ -1,4 +1,9 @@
-#include <stdlib.h> 
+/* 
+  * File: 0-positive_or_negative.c 
+  * Auth: TEUGUIA TADJUIDJE Rodolf Séderis 
+  */ 
+  
+ #include <stdlib.h> 
  #include <time.h> 
  #include <stdio.h> 
   
