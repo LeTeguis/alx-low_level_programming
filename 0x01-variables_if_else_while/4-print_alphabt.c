@@ -11,7 +11,7 @@ int main(void)
 {
 	char letter;
 
-	fir (letter = 'a'; letter <= 'z'; letter++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
 		if (letter != 'e' && letter != 'q')
 			putchar(letter);
