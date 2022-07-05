@@ -15,11 +15,11 @@ int main(void)
 	{
 		for (s = f + 1; s <= 99; s++)
 		{
-			putchar('0' + (f/10));
-			putchar('0' + (f%10));
+			putchar('0' + (f / 10));
+			putchar('0' + (f % 10));
 			putchar(' ');
-			putchar('0' + (s/10));
-			putchar('0' + (s%10));
+			putchar('0' + (s / 10));
+			putchar('0' + (s % 10));
 
 			if(!(f == 98 && s == 99))
 			{
