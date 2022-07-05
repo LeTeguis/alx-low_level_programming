@@ -1,0 +1,19 @@
+#include <unistd.h>
+
+/**
+ * main - Entry point
+ * Decription: It prints the word _putchar, followed by new line.
+ * Return: 0.
+ */
+
+int main(void)
+{
+	char word[8] = "_putchar";
+	int i;
+
+	for (i = 0; i < 8; i++)
+		_puchar(word[i]);
+	_putchar('\n');
+
+	return (0);
+}
