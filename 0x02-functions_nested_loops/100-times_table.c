@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * print_times_table:
- * @n : the integer value
+ * print_times_table: Done
+ * @n: the integer value
  * Description: determine times table
  * Return: Nothing
-
  */
 
 void print_times_table(int n)
@@ -21,14 +20,14 @@ void print_times_table(int n)
 			{
 				d = i * j;
 				
-				if (d < 100 && j != 0)
+				if (100 > d && 0 != j)
 					_putchar(' ');
-				else if (j != 0)
+				else if (0 != j)
 					_putchar((d / 100) + '0');
 
-				if (d < 10 && j != 0)
+				if (10 > d && 0 != j)
 					_putchar(' ');
-				else if (j != 0)
+				else if (0 != j)
 					_putchar(((d / 10) % 10) + '0');
 				
 				_putchar((d % 10) + '0');
