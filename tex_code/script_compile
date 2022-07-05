@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ../0x02-functions_nested_loops/_putchar.c ../0x02-functions_nested_loops/_main.c ../0x02-functions_nested_loops/$1 -o $2
