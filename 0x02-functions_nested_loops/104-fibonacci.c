@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	long int fi_2 = 0;
-	long int fi_1 = 1;
-	long int fi = 0;
+	double fi_2 = 0;
+	double fi_1 = 1;
+	double fi = 0;
 
 	int i = 0;
 
