@@ -9,17 +9,18 @@
 
 int print_sign(int n)
 {
+	int d = 0;
+
 	if (n < 0)
 	{
+		d = -1;
 		_putchar('-');
-		return (-1);
-	}
-
-	if (n > 0)
+	}else if (n > 0)
 	{
+		d = 1;
 		_putchar('+');
-		return (1);
+	}else{
+		_putchar('0');
 	}
-	_putchar('0');	
-	return (0);
+	return (d);
 }
