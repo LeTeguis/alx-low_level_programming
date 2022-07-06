@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * times_table:
+ * times_table - fonction
  * Description: table of multiplation
  * Return: Nothing
  */
