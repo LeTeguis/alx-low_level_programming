@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * add:
+ * add - function add
  * @a : first value
  * @b : second value
  * Description: determine the sum of two value
