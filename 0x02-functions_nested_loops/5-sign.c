@@ -1,5 +1,5 @@
-#include "main.h"                                                                              
-                                                                                               
+#include "main.h"
+
 /**                                                                                            
  * print_sign - signe                                                                                    
  * @n: the negative integer                                                  
