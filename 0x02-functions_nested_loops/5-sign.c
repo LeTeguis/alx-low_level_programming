@@ -1,24 +1,27 @@
 #include "main.h"                                                                              
                                                                                                
 /**                                                                                            
- * print_sign:                                                                                   
- * @n : the negative integer                                                  
+ * print_sign - signe                                                                                    
+ * @n: the negative integer                                                  
  * Description: define if the number is negative positive or null                                       
  * Return: 1 if @n is positive 0 is it null, -1 if is negative                                                             
  */                                                                                            
                                                                                                
 int print_sign(int n)                                                                           
-{                                                                                              
+{   
+	int d = 0;
+	
         if (n < 0)
 	{
 		_putchar('-');		
-                return (-1);
+                d = -1;
 	}
-        if (n > 0)
+	else if (n > 0)
 	{
 		_putchar('+');
-        	return (1);
+        	d = 1;
 	}
-	_putchar('0');	
-        return (0);     
+	else
+		_putchar('0');	
+        return (d);     
 }
