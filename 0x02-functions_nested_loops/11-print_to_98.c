@@ -2,11 +2,10 @@
 #include <stdio.h>
 
 /**
- * int print_last_digit:
- * @n : the integer value
+ * print_last_digit - function
+ * @n: the integer value
  * Description: determine the last digit of number
  * Return: last digit of @n
-
  */
 
 void print_to_98(int n)
