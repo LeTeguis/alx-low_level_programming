@@ -20,7 +20,7 @@ int main(void)
 		fi_2 = fi_1;
 		fi_1 = fi;
 
-		printf("%ld", fi);
+		printf("%lf", fi);
 
 		if (i != 97)
 			printf(", ");
