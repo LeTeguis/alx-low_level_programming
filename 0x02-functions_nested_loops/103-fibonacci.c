@@ -24,7 +24,7 @@ int main(void)
 			d = d + fi;
 	}
 
-	printf("%d\n", d);
+	printf("%ld\n", d);
 
 	return (0);
 }
