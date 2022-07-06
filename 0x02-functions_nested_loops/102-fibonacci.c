@@ -8,19 +8,19 @@
 
 int main(void)
 {
-	int fi_1 = 1;
-	int fi_2 = 0;
-	int fi;
+	long int fi_1 = 1;
+	long int fi_2 = 0;
+	long int fi;
 	int i;
 
 	for (i = 0; i < 50; i++)
 	{
 		if (i < 0)
-			printf("%d, ", fi_1);
+			printf("%ld, ", fi_1);
 		else
 		{
 			fi = fi_1 + fi_2;
-			printf("%d", fi);
+			printf("%ld", fi);
 
 			if (i != 49)
 				printf(", ");
