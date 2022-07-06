@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	double fi_2 = 0;
-	double fi_1 = 1;
-	double fi = 0;
+	unsigned long int fi_2 = 0;
+	unsigned long int fi_1 = 1;
+	unsigned long int fi = 0;
 
 	int i = 0;
 
@@ -20,7 +20,7 @@ int main(void)
 		fi_2 = fi_1;
 		fi_1 = fi;
 
-		printf("%lld", (long long int)fi);
+		printf("%lu", fi);
 
 		if (i != 97)
 			printf(", ");
