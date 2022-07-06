@@ -15,10 +15,8 @@ int main(void)
 
 	for (i = 0; i < 50; i++)
 	{
-		if (i == 0)
+		if (i < 0)
 			printf("%d, ", fi_1);
-		else if (i == 1)
-			printf("%d, ", fi_2);
 		else
 		{
 			fi = fi_1 + fi_2;
