@@ -14,7 +14,7 @@ int main(void)
 
 	int i = 0;
 
-	while (i < 98)
+	for (i = 0; i < 98; i++)
 	{
 		fi = fi_1 + fi_2;
 		fi_2 = fi_1;
@@ -24,7 +24,6 @@ int main(void)
 
 		if (i != 97)
 			printf(", ");
-		i++;
 	}
 
 	printf("\n");
