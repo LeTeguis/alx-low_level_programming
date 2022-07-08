@@ -11,7 +11,6 @@ int main(void)
 
         i = 0;
 	
-	/* i is not increment */
         while (i < 10)
         {
 		/* i is not increment */
