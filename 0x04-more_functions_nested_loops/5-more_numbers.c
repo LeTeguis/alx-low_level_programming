@@ -1,6 +1,6 @@
 /*
  * File: 5-more_numbers.c
- * Auth: TEUGUIA Rodolf Séderis
+ * Auth: TEUGUIA TADJUIDJE Rodolf Séderis
  */
 
 #include "main.h"
