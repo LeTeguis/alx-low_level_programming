@@ -6,7 +6,7 @@
  *
  * @str: string variable
  *
- * Description: prints every other character of a string, 
+ * Description: prints every other character of a string,
  * starting with the first character, followed by a new line
  *
  * Return: Nothing
