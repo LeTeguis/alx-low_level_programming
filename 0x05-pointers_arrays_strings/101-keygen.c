@@ -14,7 +14,7 @@ int main(void)
 {
 	int i = 0;
 	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char p[0];
+	char p[30];
 
 	srand(time(NULL));
 	while (i < 30)
