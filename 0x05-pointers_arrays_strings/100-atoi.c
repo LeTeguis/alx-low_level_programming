@@ -15,6 +15,7 @@ int _atoi(char *s)
 	int i = 0;
 	int signe = 1;
 	int is_number = -1;
+	int value = 0;
 
 	if (s == NULL)
 		return (number);
@@ -30,7 +31,8 @@ int _atoi(char *s)
 			else if (is_number == -1)
 				is_number = 1;
 
-			number = (number * 10) + (s[i] - '0');
+			value = s[i] - '0';
+			number = (number * 10) + value;
 		}
 		else if (is_number == 1)
 			is_number = 0;
