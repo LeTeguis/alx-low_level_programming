@@ -14,10 +14,10 @@ int main(void)
 {
 	int i = 0;
 	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char p[30];
+	char p[58];
 
 	srand(time(NULL));
-	while (i < 30)
+	while (i < 58)
 	{
 		p[i] = c[rand() % 62];
 		i++;
