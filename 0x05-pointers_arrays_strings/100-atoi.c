@@ -41,13 +41,10 @@ int _atoi(char *s)
 		i++;
 	}
 
-	if (signe == -1)
-	{
-		if (number == INT_MAX)
-			number = (-number) - 1;
-		else
-			number *= -1;
-	}
+	if (number == INT_MAX && signe == -1)
+		number = (-number) - 1;
+	else
+		number *= signe;
 
 	return (number);
 }
