@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * _atoi - convert string to number
@@ -15,7 +16,6 @@ int _atoi(char *s)
 	int i = 0;
 	int signe = 1;
 	int is_number = -1;
-	int value = 0;
 
 	if (s == NULL)
 		return (number);
@@ -31,13 +31,18 @@ int _atoi(char *s)
 			else if (is_number == -1)
 				is_number = 1;
 
-			value = s[i] - '0';
-			number = (number * 10) + value;
+			if ((number * 10) >= INT_MAX - (s[i] - '0'))
+				number = INT_MAX;
+			else
+				number = (number * 10) + (s[i] - '0');
 		}
 		else if (is_number == 1)
 			is_number = 0;
 		i++;
 	}
 
-	return (number * signe);
+	if (number == INT_MAX && signe == -1)
+		number = (-number) - 1;
+
+	return (number);
 }
