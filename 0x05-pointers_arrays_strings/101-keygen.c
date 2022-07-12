@@ -9,32 +9,15 @@
  */
 int main(void)
 {
-	int i, j, k, s;
+	int i = 0;
 	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char p[58];
 
 	srand(time(NULL));
-	while (s != 3000)
+	while (i < 58)
 	{
-		i = k = s = 0;
-		while (2800 > s)
-		{
-			j = rand() % 62;
-			p[i] = c[j];
-			s += c[j];
-			i++;
-		}
-		while (c[k])
-		{
-			if (c[k] == (3000 - s))
-			{
-				p[i] = c[k];
-				s += c[k];
-				i++;
-				break;
-			}
-			k++;
-		}
+		p[i] = c[rand() % 62];
+		i++;
 	}
 	p[i] = '\0';
 	printf("%s", p);
