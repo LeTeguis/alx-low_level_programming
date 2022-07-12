@@ -14,10 +14,10 @@ int main(void)
 	char p[58];
 
 	srand(time(NULL));
-	while (s != 2772)
+	while (s != 3000)
 	{
 		i = k = s = 0;
-		while ((2772 - 122) > s)
+		while (2800 > s)
 		{
 			j = rand() % 62;
 			p[i] = c[j];
@@ -26,7 +26,7 @@ int main(void)
 		}
 		while (c[k])
 		{
-			if (c[k] == (2772 - s))
+			if (c[k] == (3000 - s))
 			{
 				p[i] = c[k];
 				s += c[k];
