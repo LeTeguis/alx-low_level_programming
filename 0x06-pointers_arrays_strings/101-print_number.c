@@ -18,7 +18,6 @@ void print_number(int n)
 	{
 		_putchar('-');
 		print_number((n == INT_MIN) ? -(n / 10) : -n);
-
 		if (n == INT_MIN)
 			_putchar((-(n - ((n / 10) * 10))) + '0');
 	}
