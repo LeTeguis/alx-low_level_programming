@@ -18,7 +18,10 @@ void print_buffer(char *b, int size)
 	int tour = 0;
 
 	if (size <= 0)
+	{
 		printf("\n");
+		return;
+	}
 
 	tour = ((size) / 10) + (((size) % 10 != 0) ? 1 : 0);
 
