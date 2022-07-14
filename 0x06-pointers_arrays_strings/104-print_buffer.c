@@ -31,8 +31,8 @@ void print_buffer(char *b, int size)
 
 			if (index >= size)
 			{
-				printf("  ");
-				if (j < 10 && j % 2 == 1)
+				printf("%2c", ' ');
+				if (j % 2 == 1)
 					printf(" ");
 				continue;
 			}
