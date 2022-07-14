@@ -15,16 +15,16 @@
 void reverse_array(int *a, int n)
 {
 	int i = 0;
+	int demi_taille = (n / 2);
 
 	if (n > 1 && a != NULL)
 	{
-		while (i < (n / 2) - 1)
+		for (i = 0; i < demi_taille; i++)
 		{
 			int tmp = a[i];
-			
-			a[i] = a[n - i - 1];
-			a[n - i - 1] = tmp;
-			i++;
+
+			a[i] = a[n - i];
+			a[n - i] = tmp;
 		}
 	}
 }
