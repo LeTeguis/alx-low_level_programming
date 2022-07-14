@@ -31,8 +31,10 @@ void print_buffer(char *b, int size)
 
 			if (index >= size)
 			{
-				printf("\n");
-				return;
+				printf("  ");
+				if (j < 10 && j % 2 == 1)
+					printf(" ");
+				continue;
 			}
 
 			if (j < 10)
