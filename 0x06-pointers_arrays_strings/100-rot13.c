@@ -21,7 +21,7 @@ char *rot13(char *data)
 	{
 		for (j = 0; j < 52; j++)
 		{
-			if (data[i] == letter[j])
+			if (j < 52 && data[i] == letter[j])
 			{
 				data[i] = coding[j];
 				j = 100;
