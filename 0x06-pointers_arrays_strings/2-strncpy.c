@@ -17,11 +17,6 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int i = 0;
 
-	if (src == NULL)
-		return (NULL);
-	if (dest == NULL || n <= 0)
-		return (src);
-
 	for (i = 0; i < n; i++)
 	{
 		if (src[i] == '\0')
