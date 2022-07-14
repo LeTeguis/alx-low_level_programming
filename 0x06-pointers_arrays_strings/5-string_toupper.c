@@ -13,7 +13,7 @@
 
 char *string_toupper(char *c)
 {
-	int i;
+	int i = 0;
 
 	while (c[i] != '\0')
 	{
