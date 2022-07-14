@@ -15,7 +15,7 @@
 void print_buffer(char *b, int size)
 {
 	int i = 0, j = 0;
-	int tour = 0;
+	int lineNumber = 0;
 
 	if (size <= 0)
 	{
@@ -23,9 +23,9 @@ void print_buffer(char *b, int size)
 		return;
 	}
 
-	tour = ((size) / 10) + (((size) % 10 != 0) ? 1 : 0);
+	lineNumber = ((size) / 10) + (((size) % 10 != 0) ? 1 : 0);
 
-	for (i = 0; i < tour; i++)
+	for (i = 0; i < lineNumber; i++)
 	{
 		printf("%08x: ", i*10);
 
