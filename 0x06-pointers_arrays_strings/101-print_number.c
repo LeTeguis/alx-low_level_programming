@@ -16,10 +16,13 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		print_number(-n);
+		print_number((-n) / 10);
+		_putchar(((-n) % 10) + '0');
 	}
 	else if (0 <= n && n <= 9)
+	{
 		_putchar(n + '0');
+	}
 	else
 	{
 		print_number(n / 10);
