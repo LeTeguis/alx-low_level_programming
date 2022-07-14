@@ -13,17 +13,17 @@
 
 char *rot13(char *data)
 {
-	int i = 0;
-	char upper[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char lower[] = "nopqrstuvwxyzabcdefghijklm";
+	int i = 0, j = 0;
+	char letter[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char coding[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	while (data[i] != '\0')
 	{
-		if ('a' <= data[i] && data[i] <= 'z')
-			data[i] = lower[data[i] - 'a'];
-		else if ('A' <= data[i] && data[i] <= 'Z')
-			data[i] = upper[data[i] - 'A'];
-		i++;
+		for (j = 0; j < 52; j++)
+		{
+			if (data[i] == letter[j])
+				data[i] = coding[j];
+		}
 	}
 	
 	return (data);
