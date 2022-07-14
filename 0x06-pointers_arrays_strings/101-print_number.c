@@ -14,19 +14,16 @@
 
 void print_number(int n)
 {
-	int v = 0;
-
 	if (n < 0)
 	{
+		int v = n / 10;
+
 		_putchar('-');
-
-		v = n / 10;
-
 		print_number(-v);
 
-		v = -(n - (v * 10));
+		v = n - (v * 10);
 
-		_putchar(v + '0');
+		_putchar((-v) + '0');
 	}
 	else if (0 <= n && n <= 9)
 	{
