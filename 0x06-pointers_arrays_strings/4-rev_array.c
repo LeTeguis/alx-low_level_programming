@@ -16,12 +16,15 @@ void reverse_array(int *a, int n)
 {
 	int i = 0;
 
-	while (i < (n / 2) - 1)
+	if (n > 0)
 	{
-		int tmp = a[i];
-
-		a[i] = a[n - i - 1];
-		a[n - i - 1] = tmp;
-		i++;
+		while (i < (n / 2) - 1)
+		{
+			int tmp = a[i];
+			
+			a[i] = a[n - i - 1];
+			a[n - i - 1] = tmp;
+			i++;
+		}
 	}
 }
