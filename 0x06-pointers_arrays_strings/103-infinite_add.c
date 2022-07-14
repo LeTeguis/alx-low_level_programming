@@ -56,18 +56,18 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	if (retenu == '0')
 	{
-		/*
-		 * for (i = 0; i < max_leng; i++)
-		 *	r[i] = r[i + 1];
-		 * r[max_leng] = '\0';
-		*/
+		for (i = 0; i < max_leng; i++)
+			r[i] = r[i + 1];
+		r[max_leng] = '\0';
 		return (r);
 	}
 
 	if (size_r <= max_leng + 1)
 	{
+		/*
 		for (i = 0; i <= max_leng; i++)
 			r[i] = '\0';
+		*/
 		return (0);
 	}
 
