@@ -13,7 +13,8 @@
 
 char *rot13(char *data)
 {
-	int i = 0, j = 0;
+	int i = 0;
+	int j = 0;
 	char letter[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char coding[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
@@ -31,6 +32,5 @@ char *rot13(char *data)
 		i++;
 		j = 0;
 	}
-	
 	return (data);
 }
