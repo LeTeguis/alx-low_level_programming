@@ -28,17 +28,17 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	while (n2[leng2] != '\0')
 		leng2++;
 
-	for (i = 0; i < size_r - 1; i++)
-		r[i] = '0';
+	max_leng = leng1;
+        if (leng1 < leng2)
+                max_leng = leng2;
 
-	if (size_r - 1 < leng1 || size_r - 1 < leng2)
+	if (size_r - 1 < max_leng)
 	{
 		return (0);
 	}
 
-	max_leng = leng1;
-	if (leng1 < leng2)
-		max_leng = leng2;
+	for (i = 0; i < size_r - 1; i++)
+                r[i] = '0';
 
 	for (i = 0; i < max_leng; i++)
 	{
