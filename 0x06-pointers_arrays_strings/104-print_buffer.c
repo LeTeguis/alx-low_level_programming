@@ -46,7 +46,7 @@ void print_buffer(char *b, int size)
 			
 			if (j >= 10)
 			{
-				if (b[index] >= 32 && b[index] != 127)
+				if (b[index] >= 32)
 					printf("%c", b[index]);
 				else
 					printf(".");
