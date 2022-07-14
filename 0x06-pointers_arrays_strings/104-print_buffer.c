@@ -28,7 +28,6 @@ void print_buffer(char *b, int size)
 	for (i = 0; i < lineNumber; i++)
 	{
 		printf("%08x: ", i*10);
-
 		for (j = 0; j < 10; j++)
 		{
 			if (i * 10 + j < size)
@@ -54,6 +53,8 @@ void print_buffer(char *b, int size)
 				else
 					printf(".");
 			}
+			else
+				break;
 		}
 		printf("\n");
 	}
