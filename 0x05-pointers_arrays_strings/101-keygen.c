@@ -7,8 +7,15 @@
  *
  * Return: always 0
  */
+
 int main(void)
 {
+
+	/*
+	 *  why my code does not give the right result please? I get wrong code instead
+	 *  please can you help me tanks
+	 */
+
 	int i = 0;
 	char c[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char p[58];

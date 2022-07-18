@@ -24,6 +24,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while(n1[leng_n1++] != '\0');
 	leng_n1--;
+
 	while(n2[leng_n2++] != '\0');
 	leng_n2--;
 
