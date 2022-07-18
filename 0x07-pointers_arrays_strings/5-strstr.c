@@ -16,10 +16,17 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0;
 	int j = 0;
 
-	while (haystack[i] && needle != 0)
+	while (haystack[i])
 	{
-		_putchar('0' + i);
-		j++;
+		while (needle[j] && needle[j] == haystack[i + j])
+		{
+			j++;
+		}
+
+		if (!needle[j])
+			return (haystack + i);
+		
+		j = 0;
 		i++;
 	}
 	_putchar('f');
