@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strstr: locates
+ * _strstr - locates
  *
  * @haystack: first
  * @needle: second
