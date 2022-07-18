@@ -16,31 +16,13 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0;
 	int j = 0;
 
-	if (haystack == 0 || needle == 0 || needle[0] == '\0')
-		return (0);
-
-	while (haystack[i] != '\0')
+	while (haystack[i] && needle != 0)
 	{
-		_putchar(i+'0');
-		if (haystack[i] == needle[0])
-		{
-			j = 0;
-			_putchar('\n');
-			while (haystack[i + j] == needle[j])
-			{
-				_putchar(' ');
-				if (needle[j + 1] == '\0')
-					return (haystack + i);
-				j++;
-				_putchar('1');
-				if (haystack[i + j] == '\0')
-					break;
-			}
-			_putchar('S');
-		}
-		_putchar('\n');
+		_putchar('0' + i);
+		j++;
 		i++;
 	}
+	_putchar('f');
 
 	return (0);
 }
