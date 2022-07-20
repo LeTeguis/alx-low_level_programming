@@ -27,6 +27,23 @@ int palindrome(int left, char *s, int right)
 }
 
 /**
+ * lenght_of - determine the leng
+ *
+ * @s: string
+ *
+ * Description: determine the leng of string
+ *
+ * Return: lenght
+ */
+
+int lenght_of(char *s)
+{
+	if (s[0])
+		return (1 + lenght_of((s + 1)));
+	return (0);
+}
+
+/**
  * is_palindrome - palindrome
  *
  * @s: string
@@ -45,8 +62,6 @@ int is_palindrome(char *s)
 	if (s[0] == '\0')
 		return (1);
 
-	while (s[leng++]);
-	leng--;
-
+	leng = lenght_of(s);
 	return (palindrome(0, s, leng - 1));
 }
