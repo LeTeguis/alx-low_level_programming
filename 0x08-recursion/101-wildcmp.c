@@ -7,42 +7,41 @@ int null_step(char *s1, char *s2, int concern);
  *
  * @s1: first string
  * @s2: second string
- * @concern: what is the string concern
  *
  * Description: go to the next data
  *
  * Return: the wildcmp compare value
  */
 
-int next_step(char *s1, char *s2, int concern)
+int next_step(char *s1, char *s2)
 {
 	if (!s1[0])
 		return (null_step(s1, s2, 1));
 	if (!s2[0])
 		return (null_step(s1, s2, 2));
 	if (s1[0] == s2[0])
-		return (next_step((s1 + 1), (s2 + 1), 0));
+		return (next_step((s1 + 1), (s2 + 1)));
 	if (s1[0] == '*')
 	{
 		if (s1[1] && s1[1] == '*')
-			return (next_step((s1 + 1), s2, 0));
+			return (next_step((s1 + 1), s2));
 		else if (s1[1])
 		{
-			if (s1[1] == s2[0] && next_step((s1 + 1), s2, 0) == 1)
+			if (s1[1] == s2[0] && next_step((s1 + 1), s2) == 1)
 				return (1);
-			return (next_step(s1, (s2 + 1), 0));
+			return (next_step(s1, (s2 + 1)));
 		}
 		return (1);
 	}
 	if (s2[0] == '*')
 	{
 		if (s2[1] && s2[1] == '*')
-			return (next_step(s1, (s2 + 1), concern));
+			return (next_step(s1, (s2 + 1)));
 		else if (s2[1])
 		{
-			if (s2[1] == s1[0] && next_step(s1, (s2 + 1), 0) == 1)
+			if (s2[1] == s1[0] && next_step(s1, (s2 + 1)) == 1)
 				return (1);
-			return (next_step((s1 + 1), s2, 0));
+			return (next_step((s1 + 1), s2));
 		}
 		return (1);
 	}
@@ -102,5 +101,5 @@ int wildcmp(char *s1, char *s2)
 		return (null_step(s1, s2, 1));
 	if (!s2[0])
 		return (null_step(s1, s2, 2));
-	return (next_step(s1, s2, 0));
+	return (next_step(s1, s2));
 }
