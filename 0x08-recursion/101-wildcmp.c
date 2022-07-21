@@ -62,22 +62,12 @@ int next_step(char *s1, char *s2)
 
 int null_step(char *s1, char *s2, int concern)
 {
-	if (concern == 1)
-	{
-		if (!s2[0])
-			return (1);
-		if (s2[0] == '*')
-			return (null_step(s1, (s2 + 1), concern));
-		return (0);
-	}
-	else if (concern == 2)
-	{
-		if (!s1[0])
-			return (1);
-		if (s1[0] == '*')
-			return (null_step((s1 + 1), s2, concern));
-		return (0);
-	}
+	if ((concern == 1 && !s2[0]) || (concern == 2 && !s1[0]))
+		return (1);
+	if (concern == 1 && s2[0] == '*')
+		return (null_step(s1, (s2 + 1), concern));
+	if (concern == 2 && s1[0] == '*')
+		return (null_step((s1 + 1), s2, concern));
 	return (0);
 }
 
