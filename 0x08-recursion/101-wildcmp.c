@@ -17,9 +17,9 @@ int null_step(char *s1, char *s2, int concern);
 int next_step(char *s1, char *s2, int concern)
 {
 	if (!s1[0])
-                return (null_step(s1, s2, 1));
-        if (!s2[0])
-                return (null_step(s1, s2, 2));
+		return (null_step(s1, s2, 1));
+	if (!s2[0])
+		return (null_step(s1, s2, 2));
 	if (s1[0] == s2[0])
 		return (next_step((s1 + 1), (s2 + 1), 0));
 	if (s1[0] == '*')
@@ -103,4 +103,4 @@ int wildcmp(char *s1, char *s2)
 	if (!s2[0])
 		return (null_step(s1, s2, 2));
 	return (next_step(s1, s2, 0));
-}	
+}
