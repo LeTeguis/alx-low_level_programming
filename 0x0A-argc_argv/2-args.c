@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 /**
- * main -  entry point
+ * main - entry point
  *
  * @argc: number of argument
  * @argv: all argument
  *
  * Description: prints all arguments it receives
- *
  * Return: 0
  */
 
