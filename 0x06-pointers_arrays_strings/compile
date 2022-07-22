@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -Wall -pedantic -Werror -Wextra -fsanitize=signed-integer-overflow -std=gnu89 _putchar.c main.c $1 -o executable
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c main.c $1 -o executable

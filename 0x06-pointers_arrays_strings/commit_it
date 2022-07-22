@@ -1,4 +1,4 @@
-#!/bin/bash
+/bin/bash: q: command not found
 git add .
 git commit -m $1
 git push
