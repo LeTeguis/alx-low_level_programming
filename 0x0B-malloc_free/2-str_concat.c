@@ -20,12 +20,12 @@ char *str_concat(char *s1, char *s2)
 	char *concatain = 0;
 	int i = 0;
 
-	while (s1[lengOne++])
+	while (s1 != 0 && s1[lengOne++])
 		;
-	while (s2[lengTwo++])
+	while (s2 != 0 && s2[lengTwo++])
 		;
-	lengOne--;
-	lengTwo--;
+	lengOne = (lengOne == 0) ? 0 : lengOne - 1;
+	lengTwo = (lengTwo == 0) ? 0 : lengTwo - 1;
 
 	concatain = (char *)malloc(sizeof(char) * (lengOne + lengTwo + 1));
 
