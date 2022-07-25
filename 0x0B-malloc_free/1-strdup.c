@@ -25,9 +25,10 @@ char *_strdup(char *str)
 	while (str[leng++])
 		;
 	leng--;
-	copy = (char *)malloc(sizeof(char) * leng);
+	copy = (char *)malloc(sizeof(char) * (leng + 1));
 	if (copy)
 	{
+		copy[leng] = '\0';
 		while (--leng >= 0)
 			copy[leng] = str[leng];
 	}
