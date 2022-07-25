@@ -34,7 +34,6 @@ char *argstostr(int ac, char **av)
 	argv = (char *)malloc(sizeof(char) * (leng + 1));
 	if (argv)
 	{
-		printf("%d\n", (leng + 1));
 		for (i = 0; i <= leng; i++)
 			*(argv + i) = '\0';
 		leng  = 0;
