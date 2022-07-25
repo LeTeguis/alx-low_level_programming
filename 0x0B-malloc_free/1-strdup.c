@@ -17,21 +17,19 @@
 char *_strdup(char *str)
 {
 	int leng = 0;
+	char *copy = 0;
+
+	if (str == 0)
+		return (0);
 
 	while (str[leng++])
 		;
 	leng--;
-
-	if (leng > 0)
+	copy = (char *)malloc(sizeof(char) * leng);
+	if (copy)
 	{
-		char *copy = (char *)malloc(sizeof(char) * leng);
-
-		if (copy)
-		{
-			while (--leng >= 0)
-				copy[leng] = str[leng];
-		}
-		return (copy);
+		while (--leng >= 0)
+			copy[leng] = str[leng];
 	}
-	return (0);
+	return (copy);
 }
