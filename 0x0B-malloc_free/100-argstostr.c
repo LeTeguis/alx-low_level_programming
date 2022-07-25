@@ -34,8 +34,10 @@ char *argstostr(int ac, char **av)
 	argv = (char *)malloc(sizeof(char) * (leng + 1));
 	if (argv)
 	{
+		/*
 		for (i = 0; i <= leng; i++)
 			*(argv + i) = '\0';
+			*/
 		leng  = 0;
 		for (i = 0; i < ac; i++)
 		{
