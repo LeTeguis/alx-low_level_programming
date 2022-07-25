@@ -33,8 +33,15 @@ int **alloc_grid(int width, int height)
 					for (i = 0; i < width; i++)
 						array2D[j][i] = 0;
 				}
+				else
+				{
+					free(array2D);
+					return (0);
+				}
 			}
 		}
+		else
+			return (0);
 	}
 	return (array2D);
 }
