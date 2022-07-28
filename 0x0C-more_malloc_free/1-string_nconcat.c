@@ -3,6 +3,46 @@
 #include <stdlib.h>
 
 /**
+ * string-leng - calcul leng
+ *
+ * @s: string
+ *
+ * Description: calcul the leng of string
+ *
+ * Return: leng of string
+ */
+
+unsigned int string_leng(char *s)
+{
+	if (!s)
+		return (0);
+	return (1 + string_leng((s + 1)));
+}
+
+/**
+ * string_add - add
+ *
+ * @s1: first string
+ * @s2: seconde string
+ * @p: position init
+ * @l: leng
+ *
+ * Description: add s2 in s1
+ *
+ * Return: void
+ */
+
+void string_add(char *s1, char *s2, unsigned int p, unsigned int l)
+{
+	int i = 0;
+	while (s1[i + p] && s2[i] && i < l)
+	{
+		s1[i + p] = s2[i];
+		i++;
+	}
+}
+
+/**
  * string_nconcat - n concatebation
  *
  * @s1: first string
@@ -25,20 +65,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!s1 && !s2)
 	{
 		result = (char *)malloc(sizeof(char));
-		result[0] = '\0';
-		return (0);
-	}
-	if (s1)
-	{
-		while (s1[l_1])
-			l_1++;
+		if (result)
+			result[0] = '\0';
+		return (result);
 	}
 
-	if (s2 && n > 0)
-	{
-		while (s2[l_2])
-			l_2++;
-	}
+	l_1 = string_leng(s1);
+	l_2 = string_leng(s2);
 
 	if (n < l_2)
 		l_2 = n;
@@ -48,18 +81,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!result)
 		return (0);
 
-	i = 0;
-	while (s1[i])
-	{
-		result[i] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		result[i + l_1] = s2[i];
-	       i++;
-	}
+	string_add(result, s1, 0, l_1);
+	string_add(result, s2, l_1, l_2);
 	result[l_1 + l_2] = '\0';
 	return (result);
 }
