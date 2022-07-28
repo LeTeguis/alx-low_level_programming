@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * string-leng - calcul leng
+ * string_leng - calcul leng
  *
  * @s: string
  *
@@ -14,7 +14,7 @@
 
 unsigned int string_leng(char *s)
 {
-	if (!s)
+	if (!s || !s[0])
 		return (0);
 	return (1 + string_leng((s + 1)));
 }
@@ -34,8 +34,9 @@ unsigned int string_leng(char *s)
 
 void string_add(char *s1, char *s2, unsigned int p, unsigned int l)
 {
-	int i = 0;
-	while (s1[i + p] && s2[i] && i < l)
+	unsigned int i = 0;
+
+	while (i < l && s2[i])
 	{
 		s1[i + p] = s2[i];
 		i++;
@@ -60,7 +61,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int l_1 = 0;
 	unsigned int l_2 = 0;
 	char *result;
-	unsigned int i = 0;
 
 	if (!s1 && !s2)
 	{
