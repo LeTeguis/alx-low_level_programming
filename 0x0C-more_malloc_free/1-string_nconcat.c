@@ -23,7 +23,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i = 0;
 
 	if (!s1 && !s2)
+	{
+		result = (char *)malloc(sizeof(char));
+		result[0] = '\0';
 		return (0);
+	}
 	if (s1)
 	{
 		while (s1[l_1])
