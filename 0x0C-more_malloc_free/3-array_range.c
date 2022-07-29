@@ -30,6 +30,8 @@ int *array_range(int min, int max)
 
 	for (i = 0; i < (max - min + 1); i++)
 		table[i] = min + i;
+	for (i = min; i <= max; i++)
+		table[i - min] = i;
 
 	return (table);
 }

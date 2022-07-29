@@ -38,7 +38,7 @@ void string_add(char *s1, char *s2, unsigned int p, unsigned int l)
 
 	while (i < l && s2[i])
 	{
-		s1[i + p] = s2[i];
+		*(s1 + i + p) = *(s2 + i);
 		i++;
 	}
 }
