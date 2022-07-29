@@ -22,23 +22,6 @@ int isInteger(char *s)
 }
 
 /**
- * stringLeng - leng
- *
- * @s: string
- *
- * Description: calcul the leng of s
- *
- * Return: leng of s
- */
-
-unsigned int stringLeng(char *s)
-{
-	if (!s[0])
-		return (0);
-	return (1 + stringLeng((s + 1)));
-}
-
-/**
  * multiplieByDigit - simple multiplie
  *
  * @s: string
@@ -207,8 +190,10 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	leng_one = stringLeng(argv[1]);
-	leng_two = stringLeng(argv[2]);
+	while (argv[1][leng_one])
+		leng_one++;
+	while (argv[2][leng_two])
+		leng_two++;
 
 	if (leng_one >= leng_two)
 		resultat = multiplier(argv[1], leng_one, argv[2], leng_two);
