@@ -6,18 +6,25 @@
  * isInteger - it is integer?
  *
  * @s: string
+ * @isZero: check if the number isZero
  *
  * Description: determine if s is the big integer
  *
  * Return: 1 if is true 0 if not true
  */
 
-int isInteger(char *s)
+int isInteger(char *s, int *isZero)
 {
 	if (!s[0])
 		return (1);
 	if ('0' <= s[0] && s[0] <= '9')
-		return (isInteger((s + 1)));
+	{
+		if (*isZero == 1 && s[0] != '0')
+		{
+			*isZero = 0;
+		}
+		return (isInteger((s + 1), isZero));
+	}
 	return (0);
 }
 
@@ -128,6 +135,7 @@ char *addFromPrevious(char *s1, unsigned int *leng1,
  * @leng_one: leng of s1
  * @s2: simple string better than s1
  * @leng_two: leng of s2
+ * @size_solution: leng of result
  *
  * Description : the concrete multiplation fonction
  *
@@ -135,11 +143,10 @@ char *addFromPrevious(char *s1, unsigned int *leng1,
  */
 
 char *multiplier(char *s1, unsigned int leng_one,
-		char *s2, unsigned int leng_two)
+		char *s2, unsigned int leng_two, unsigned int *size_solution)
 {
 	unsigned int i = 0;
 	char *solution = 0;
-	unsigned int size_solution = 0;
 
 	for (i = 0; i < leng_two; i++)
 	{
@@ -150,7 +157,7 @@ char *multiplier(char *s1, unsigned int leng_one,
 		mult = multiplieByDigit(s1, leng_one, s2[leng_two - i - 1], i, &size_mult);
 		if (!mult)
 			return (0);
-		add = addFromPrevious(solution, &size_solution, mult, size_mult);
+		add = addFromPrevious(solution, size_solution, mult, size_mult);
 
 		if (!add)
 			return (0);
@@ -162,6 +169,45 @@ char *multiplier(char *s1, unsigned int leng_one,
 
 	return (solution);
 }
+
+/**
+ * subStringZero - sub number
+ *
+ * @s: string number
+ * @size: final size of s
+ *
+ * Description: determine de sub numbe if have zero in front
+ *
+ * Return: sub number
+ */
+
+char *subStringZero(char *s, unsigned int *size)
+{
+	unsigned int leng = 0;
+	char *sub = 0;
+	unsigned int i = 0;
+
+	*size = 0;
+	while (s[leng])
+	{
+		if (s[leng] != '0')
+			break;
+		leng++;
+	}
+
+	while (s[leng + *size])
+		(*size)++;
+
+	sub = (char *)malloc(sizeof(char) * (*size + 1));
+	if (!sub)
+		return (0);
+	for (i = 0; i < *size; i++)
+		sub[i] = s[leng + i];
+	sub[*size] = '\0';
+	return (sub);
+}
+
+
 /**
  * main - entry point
  *
@@ -179,30 +225,40 @@ int main(int argc, char **argv)
 	unsigned int leng_one = 0;
 	unsigned int leng_two = 0;
 	char *resultat = 0;
+	int first = 1;
+	int second = 1;
+	unsigned int l = 0;
+	char *s1 = 0;
+	char *s2 = 0;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (!isInteger(argv[1]) || !isInteger(argv[2]))
+	if (!isInteger(argv[1], &first) || !isInteger(argv[2], &second))
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	while (argv[1][leng_one])
-		leng_one++;
-	while (argv[2][leng_two])
-		leng_two++;
+	if (first == 1 || second == 1)
+	{
+		printf("0\n");
+		return (0);
+	}
+	s1 = subStringZero(argv[1], &leng_one);
+	s2 = subStringZero(argv[2], &leng_two);
 
 	if (leng_one >= leng_two)
-		resultat = multiplier(argv[1], leng_one, argv[2], leng_two);
+		resultat = multiplier(s1, leng_one, s2, leng_two, &l);
 	else
-		resultat = multiplier(argv[2], leng_two, argv[1], leng_one);
+		resultat = multiplier(s2, leng_two, s1, leng_one, &l);
 	if (resultat)
 	{
 		printf("%s\n", resultat);
 		free(resultat);
 	}
+	free(s1);
+	free(s2);
 	return (0);
 }
