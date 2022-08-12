@@ -15,11 +15,11 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *newDog = 0;
+	dog_t *newDog = 0;
 	int sizeName = 0;
 	int sizeOwner = 0;
 
-	newDog = (struct dog *)malloc(sizeof(struct dog));
+	newDog = (dog_t *)malloc(sizeof(dog_t));
 
 	if (newDog == 0)
 		return (0);
@@ -46,6 +46,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 			newDog->owner[sizeOwner - 1] = owner[sizeOwner - 1];
 			sizeOwner--;
 		}
+	else
+	{
+		free(newDog->name);
+		free(newDog);
+		return (0);
+	}
 	newDog->age = age;
 	return (newDog);
 }
