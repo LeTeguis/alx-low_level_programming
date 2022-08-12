@@ -21,7 +21,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	newDog = (dog_t *)malloc(sizeof(dog_t));
 
-	if (newDog == 0)
+	if (newDog == 0 || name == 0 || owner == 0)
 		return (0);
 	while (name[sizeName])
 		sizeName++;
