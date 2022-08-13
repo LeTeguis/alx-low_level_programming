@@ -22,5 +22,7 @@ int main(int argc, char **argv)
 		else
 			printf("Error\n");
 	}
+	else
+		printf("Error\n");
 	return (0);
 }
