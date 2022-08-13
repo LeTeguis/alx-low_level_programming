@@ -2,6 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - entry point
+ *
+ * @argc: number of argment plus one
+ * @argv: all argument
+ *
+ * Return: 0
+ */
+
 int main(int argc, char **argv)
 {
 	if (argc == 4)
