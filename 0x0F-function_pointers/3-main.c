@@ -20,9 +20,15 @@ int main(int argc, char **argv)
 		if (operator != 0)
 			printf("%d\n", operator(atoi(argv[1]), atoi(argv[3])));
 		else
+		{
 			printf("Error\n");
+			return (1);
+		}
 	}
 	else
+	{
 		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
