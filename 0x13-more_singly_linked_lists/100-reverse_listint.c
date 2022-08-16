@@ -1,49 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
-#include <stdio.h>
-
-/**
- * swapNode - swap
- *
- * @first: node
- * @second: node
- *
- * Description: swap content of two nodes
- *
- * Return: nothing
- */
-void swapNode(listint_t *first, listint_t *second, int head)
-{
-	listint_t *tmp = 0;
-
-	if (head == 0)
-		tmp = first;
-	else
-		tmp = first->next;
-	first->next = second->next;
-	second->suivant = tmp;
-	first->n = second->n;
-	second->n = tmp;
-}
-
-/**
- * replace - get
- *
- * @head: list
- * @node: node
- *
- * Description: place head in front to node
- *
- * Return: front to node
- */
-listint_t *replace(listint_t *head, listint_t *node)
-{
-	listint_t *tmp = head;
-
-	while (tmp->next->next != node)
-		tmp = tmp->next;
-	return (tmp);
-}
 
 /**
  * reverse_listint - reverse
