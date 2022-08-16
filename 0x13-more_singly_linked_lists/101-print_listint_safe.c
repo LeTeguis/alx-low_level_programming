@@ -15,23 +15,47 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	if (head == 0)
+	if (head == NULL)
 	{
 		exit(98);
 		return (0);
 	}
 	else
 	{
-		size_t number = 0;
-		listint_t *tmp = head;
+		const listint_t *tmp = head;
+		const listint_t *doublon = 0;
+		size_t count = 1;
 
-		while (tmp->next != 0)
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
+		while (tmp != NULL)
 		{
-			printf("[%p] %d\n", &(*tmp), tmp->n);
+			const listint_t *isExist = head;
+			size_t nCount = 0;
+			int boucle = 0;
+
+			while (isExist != 0)
+			{
+				if (isExist == tmp)
+				{
+					if (nCount != count)
+					{
+						boucle = 1;
+						doublon = isExist;
+					}
+					break;
+				}
+				isExist = isExist->next;
+				nCount++;
+			}
+			if (boucle == 1)
+				break;
+			printf("%d\n", tmp->n);
 			tmp = tmp->next;
-			number++;
+			count++;
 		}
-		printf("-> [%p] %d\n", &(*tmp), tmp->n);
-		return (number);
+		if (doublon != 0)
+			printf("[%p] %d\n", &doublon, doublon->n);
+		return (count);
 	}
 }

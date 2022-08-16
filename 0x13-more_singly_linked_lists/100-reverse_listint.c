@@ -1,5 +1,13 @@
 #include "lists.h"
 
+listint_t *gotoit(listint_t *begin, listint_t *end)
+{
+	if (begin == 0 || begin->next == 0)
+		return (0);
+	if (begin->next->next == end)
+		return (begin);
+	return (gotoit(begin->next, end));
+}
 /**
  * reverse_listint - reverse
  *
@@ -18,17 +26,27 @@ listint_t *reverse_listint(listint_t **head)
 	else
 	{
 		listint_t *left = *head;
-		listint_t *right = left->next;
-		left->next = 0;
+		listint_t *right = 0;
 
-		while (*right != 0)
+		while (left->next != right)
 		{
-			left = right;
-			right = right->next;
-			left->next = *head;
-			*head = left;
+			if (right == 0)
+			{
+				right = gotoit(left, right);
+				*head = right->next;
+				right->next->next = left->next;
+				right->next = left;
+				left->next = 0;
+				left = *head;
+				right = right->next;
+			}
+			else
+			{
+				right = gotoit(left, right);
+				right->next->next = left->next;
+				left->next = right->next;
+			}
 		}
-		*head = right;
 		return (*head);
 	}
 }
