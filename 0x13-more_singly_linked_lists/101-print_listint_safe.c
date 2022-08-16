@@ -26,7 +26,7 @@ size_t print_listint_safe(const listint_t *head)
 		const listint_t *doublon = 0;
 		size_t count = 1;
 
-		printf("%d\n", tmp->n);
+		printf("[%p] %d\n", (void *)tmp, tmp->n);
 		tmp = tmp->next;
 		while (tmp != NULL)
 		{
@@ -50,12 +50,12 @@ size_t print_listint_safe(const listint_t *head)
 			}
 			if (boucle == 1)
 				break;
-			printf("%d\n", tmp->n);
+			printf("[%p] %d\n", (void *)tmp, tmp->n);
 			tmp = tmp->next;
 			count++;
 		}
 		if (doublon != 0)
-			printf("[%p] %d\n", &doublon, doublon->n);
+			printf("-> [%p] %d\n", (void *)doublon, doublon->n);
 		return (count);
 	}
 }
