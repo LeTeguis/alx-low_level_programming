@@ -12,10 +12,16 @@
  *
  * Return: nothing
  */
-void swapNode(listint_t *first, listint_t *second)
+void swapNode(listint_t *first, listint_t *second, int head)
 {
-	int tmp = first->n;
+	listint_t *tmp = 0;
 
+	if (head == 0)
+		tmp = first;
+	else
+		tmp = first->next;
+	first->next = second->next;
+	second->suivant = tmp;
 	first->n = second->n;
 	second->n = tmp;
 }
@@ -34,7 +40,7 @@ listint_t *replace(listint_t *head, listint_t *node)
 {
 	listint_t *tmp = head;
 
-	while (tmp->next != node)
+	while (tmp->next->next != node)
 		tmp = tmp->next;
 	return (tmp);
 }
@@ -56,17 +62,17 @@ listint_t *reverse_listint(listint_t **head)
 	}
 	else
 	{
-		listint_t *left = *head;
+		listint_t *left = 0;
 		listint_t *right = 0;
 
-		while (left->next != right)
+		while (*head != 0)
 		{
-			right = replace(left, right);
-			swapNode(left, right);
-			if (left->next == right)
-				break;
-			left = left->next;
+			right = (*head)->next;
+			(*head)->next = left;
+			left = *head;
+			*head = right;
 		}
+		*head = right;
 		return (*head);
 	}
 }
