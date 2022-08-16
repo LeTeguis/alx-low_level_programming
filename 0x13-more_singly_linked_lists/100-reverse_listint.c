@@ -17,15 +17,16 @@ listint_t *reverse_listint(listint_t **head)
 	}
 	else
 	{
-		listint_t *left = 0;
-		listint_t *right = 0;
+		listint_t *left = *head;
+		listint_t *right = left->next;
+		left->next = 0;
 
-		while (*head != 0)
+		while (*right != 0)
 		{
-			right = (*head)->next;
-			(*head)->next = left;
-			left = *head;
-			*head = right;
+			left = right;
+			right = right->next;
+			left->next = *head;
+			*head = left;
 		}
 		*head = right;
 		return (*head);
