@@ -13,11 +13,8 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int data = 0;
-
 	if (n == 0)
 		return (-1);
-	data = 1 << index;
-	*n = *n | data;
+	*n = *n | (1 << index);
 	return (1);
 }
