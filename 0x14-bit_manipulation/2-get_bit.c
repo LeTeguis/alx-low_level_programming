@@ -13,22 +13,13 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int index_number = 0;
-	unsigned long int copy = n;
-	unsigned long int data = 0;
-
-	if (copy == 0)
-		index_number = 1;
-	else
+	if (n == 0 || n == 1)
 	{
-		while (copy > 0)
-		{
-			index_number++;
-			copy = copy >> 1;
-		}
-	}
-	if (index_number <= index)
+		if (index == 0)
+			return (n);
 		return (-1);
-	data = n >> index;
-	return (1 & data);
+	}
+	if (index == 0)
+		return (n & 1);
+	return (get_bit((n >> 1), (index - 1)));
 }
