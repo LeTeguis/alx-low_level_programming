@@ -24,28 +24,20 @@ list_t *add_node(list_t **head, const char *str)
 	while (str[nbr])
 		nbr++;
 	node->next = *head;
-	if (nbr == 0)
-	{
-		node->str = 0;
+	node->str = (char *)malloc(sizeof(char) * (nbr + 1));
+	if (node->str == 0)
 		node->len = 0;
-	}
 	else
 	{
-		node->str = (char *)malloc(sizeof(char) * (nbr + 1));
-		if (node->str == 0)
-			node->len = 0;
-		else
-		{
-			unsigned int i = 0;
+		unsigned int i = 0;
 
-			while (i < nbr)
-			{
-				node->str[i] = str[i];
-				i++;
-			}
-			node->str[nbr] = '\0';
-			node->len = nbr;
+		while (i < nbr)
+		{
+			node->str[i] = str[i];
+			i++;
 		}
+		node->str[nbr] = '\0';
+		node->len = nbr;
 	}
 	(*head) = node;
 	return (node);
