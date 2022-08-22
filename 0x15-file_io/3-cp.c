@@ -41,6 +41,10 @@ void exit_error(int erreur, int code, char *file_name,
 			else if (fclose2 != -1)
 				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fclose2);
 		}
+		if (fd == 1 && fclose1 != -1)
+			close(fclose1);
+		if (fd == 1 && fclose2 != -1)
+			close(fclose2);
 		exit(code);
 	}
 }
