@@ -1,11 +1,11 @@
-##C - File I/O
+## C - File I/O
 
 in this project our going to learn how to open, read, write and close the file in c
 
 ## READ TEXT FILE
 this projet help to read a text file in c
 
-##Description
+Description
 Write a function that reads a text file and prints it to the POSIX standard output.
 
 * Prototype: ssize_t read_textfile(const char *filename, size_t letters);
