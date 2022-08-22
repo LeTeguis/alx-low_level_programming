@@ -71,8 +71,6 @@ int main(int argc, char **argv)
 	int close_write = 0;
 
 	exit_error((argc != 3) ? -1 : 1, 97, 0, -1, -1);
-	exit_error((argv[1] == 0) -1 : 1, 98, 0, -1, -1);
-	exit_error((argv[2] == 0) -1 : 1, 99, 0, -1, -1);
 	file_from = open(argv[1], O_RDONLY);
 	exit_error(file_from, 98, argv[1], -1, -1);
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
