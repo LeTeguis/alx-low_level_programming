@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * getHead - get
@@ -63,11 +64,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			free(new_value);
 		else
 		{
-			dlistint_t *next = first->next;
+			dlistint_t *prev = first->prev;
 
-			first->next = new_value;
-			new_value->next = next;
-			new_value->prev = first;
+			new_value->prev = prev;
+			prev->next = new_value;
+			new_value->next = first;
+			first->prev = new_value;
 		}
 	}
 	return (new_value);
