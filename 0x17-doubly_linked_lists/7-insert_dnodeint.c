@@ -2,6 +2,28 @@
 #include <stdlib.h>
 
 /**
+ * getHead - get
+ *
+ * @h: potential head
+ *
+ * Return: node
+ */
+dlistint_t *getHead(dlistint_t *h)
+{
+	dlistint_t *first = h;
+
+	if (h == 0)
+		return (0);
+	while (first->prev != 0)
+	{
+		dlistint_t *tmp = first;
+
+		first = first->prev;
+		first->next = tmp;
+	}
+	return (first);
+}
+/**
  * insert_dnodeint_at_index - get
  *
  * @h: potential list head
@@ -22,39 +44,31 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_value->prev = 0;
 	if (h == 0)
 		return (new_value);
-	else if(*h == 0)
+	else if (*h == 0)
 		*h = new_value;
 	else
 	{
-		 dlistint_t *first = *h;
-		 unsigned int i = 0;
+		dlistint_t *first = getHead(*h);
+		unsigned int i = 0;
 
-		 while (first->prev != 0)
-		 {
-			 dlistint_t *tmp = first;
+		while (i < idx && first != 0)
+		{
+			dlistint_t *tmp = first;
 
-			 first = first->prev;
-			 first->next = tmp;
-		 }
+			first = first->next;
+			first->prev = tmp;
+			i++;
+		}
+		if (first == 0)
+			free(new_value);
+		else
+		{
+			dlistint_t *prev = first->prev;
 
-		 while (i < idx && first != 0)
-		 {
-			 dlistint_t *tmp = first;
-
-			 first = first->next;
-			 first->prev = tmp;
-			 i++;
-		 }
-		 if (first == 0)
-			 free(new_value);
-		 else
-		 {
-			 dlistint_t *prev = first->prev;
-
-			 first->prev = new_value;
-			 new_value->next = first;
-			 new_value->prev = prev;
-		 }
+			first->prev = new_value;
+			new_value->next = first;
+			new_value->prev = prev;
+		}
 	}
 	return (new_value);
 }
