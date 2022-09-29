@@ -11,8 +11,6 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *node = 0;
-
 	if (head != 0)
 	{
 		dlistint_t *first = head;
@@ -36,7 +34,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			if (first == 0)
 				return (0);
 		}
-		node = first;
+		return (first);
 	}
-	return (node);
+	return (0);
 }
