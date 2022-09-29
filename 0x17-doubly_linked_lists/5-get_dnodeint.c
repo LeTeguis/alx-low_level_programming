@@ -26,16 +26,16 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			first->next = tmp;
 		}
 
-		while (i < index && first != 0)
+		while (i < index)
 		{
 			dlistint_t *tmp = first;
 
 			first = first->next;
 			first->prev = tmp;
 			i++;
+			if (first == 0)
+				return (0);
 		}
-		if (i > index || first == 0)
-			return (0);
 		node = first;
 	}
 	return (node);
