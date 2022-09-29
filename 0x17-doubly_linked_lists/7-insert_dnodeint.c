@@ -63,11 +63,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			free(new_value);
 		else
 		{
-			dlistint_t *prev = first->prev;
+			dlistint_t *next = first->next;
 
-			first->prev = new_value;
-			new_value->next = first;
-			new_value->prev = prev;
+			first->next = new_value;
+			new_value->next = next;
+			new_value->prev = first;
 		}
 	}
 	return (new_value);
