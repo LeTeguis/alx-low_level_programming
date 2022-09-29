@@ -21,7 +21,8 @@ int sum_prev(dlistint_t *head)
  * @head: potential list head
  *
  * Return: sum off all node or 0
- */int sum_next(dlistint_t *head)
+ */
+int sum_next(dlistint_t *head)
 {
 	if (head == 0)
 		return (0);
