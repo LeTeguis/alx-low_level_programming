@@ -24,7 +24,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			first->next = tmp;
 		}
 
-		while (i <= index)
+		while (i < index)
 		{
 			dlistint_t *tmp = first;
 
