@@ -60,9 +60,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (0);
 	new_value->n = n;
 	new_value->prev = prev;
-	if (prev != 0)
-		prev->next = new_value;
 	new_value->next = node;
 	node->prev = new_value;
+	if (prev != 0)
+		prev->next = new_value;
+	else
+	{
+		if (h != 0)
+			*h = new_value;
+	}
 	return (new_value);
 }
