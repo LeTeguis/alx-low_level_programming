@@ -34,6 +34,8 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 			first->prev = tmp;
 			i++;
 		}
+		if (i > index || first == 0)
+			return (0);
 		node = first;
 	}
 	return (node);
