@@ -39,7 +39,11 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *tmp = 0;
 
 	if (ht == 0 || ks == 0)
+	{
+		if (ks != 0)
+			free(ks);
 		return (0);
+	}
 	index = key_index(ks, ht->size);
 	tmp = ht->array[index];
 	while (tmp)
