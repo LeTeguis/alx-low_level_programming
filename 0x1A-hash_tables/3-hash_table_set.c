@@ -20,6 +20,7 @@ char *copy_str(const char *str)
 		return (0);
 	for (i = 0; i < size; i++)
 		cp_str[i] = str[i];
+	cp_str[size] = '\0';
 	return (cp_str);
 }
 
@@ -42,6 +43,7 @@ unsigned char *copy_str_2(const char *str)
 		return (0);
 	for (i = 0; i < size; i++)
 		cp_str[i] = str[i];
+	cp_str[size] = '\0';
 	return (cp_str);
 }
 
@@ -63,7 +65,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned char *ks2 = copy_str_2(key);
 
 	if (ht == 0 || ks == 0 || vs == 0 || ks2 == 0)
+	{
+		if (ks != 0)
+			free(ks);
+		if (vs != 0)
+			free(vs);
+		if (ks2 != 0)
+			free(ks2);
 		return (0);
+	}
 	new_el = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (new_el == 0)
 		return (0);

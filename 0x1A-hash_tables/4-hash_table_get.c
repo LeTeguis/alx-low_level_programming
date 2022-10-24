@@ -21,6 +21,7 @@ unsigned char *copy_str_(const char *str)
 		return (0);
 	for (i = 0; i < size; i++)
 		cp_str[i] = str[i];
+	cp_str[size] = '\0';
 	return (cp_str);
 }
 /**
