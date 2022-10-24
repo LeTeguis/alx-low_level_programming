@@ -67,10 +67,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_el = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (new_el == 0)
 		return (0);
+	new_el->key = 0;
 	new_el->key = ks;
 	new_el->value = vs;
 	index = key_index(ks2, ht->size);
-	new_el->next = ht->array[index];
+	if (ht->array[index] != 0)
+		new_el->next = ht->array[index];
 	ht->array[index] = new_el;
 	return (1);
 }
